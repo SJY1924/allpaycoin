@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
 </head>
@@ -22,7 +21,7 @@
                     <div class="logo">
                         <img src="./images/logo.png" alt="home바로가기">
                     </div>
-                    <nav class="nav">
+                    <div class="nav">
                         <ul>
                             <li><a href="#">HOME</a></li>
                             <li><a href="#">DOWNLOAD</a></li>
@@ -31,7 +30,7 @@
                             <li><a href="#">이용약관</a></li>
                             <li><a href="#">DISCONNECT</a></li>
                         </ul>
-                    </nav>
+                    </div>
                     <div class="nav_btn">
                         <div class="nav_bar_line"></div>
                     </div>
@@ -48,48 +47,120 @@
                     <div class="coin_info_box">
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="coin_info_text">
-                                    <h2>ALLPAYCOIN</h2>
-                                    <p>AllPay Coin</p>
-                                    <p>address:0x6df0adf7asdf8ydc7fva7878</p>
-                                </div>
-                                <div class="coin_info_price">
-                                    <img src="./images/coin_copy_icon.png" alt="">
-                                    <img src="./images/coin_s_qr_icon.png" alt="">
-                                    <div class="price_num">
-                                        <h1>319,235</h1>
+                                <div class="swiper-slide">
+                                    <div class="coin_info_text">
+                                        <div class="title_text">
+                                            <img src="./images/Allpay_symbol01.png" alt="">
+                                            <h3>ALLPAYCOIN</h3>
+                                        </div>
+                                        <p>AllPay Coin</p>
+                                        <p>address: 0x6df0adf7asdf8ydc7fva7878</p>
+                                    </div>
+                                    <div class="coin_info_price">
+                                        <img src="./images/coin_copy_icon.png" alt="">
+                                        <img src="./images/coin_s_qr_icon.png" alt="">
+                                        <div class="price_num">
+                                            <h1>319,235</h1>
+                                        </div>
+                                    </div>
+                                    <div class="info_btn">
+                                        <input type="button" class="info_button_btn" value="전송하기">
                                     </div>
                                 </div>
-                                <div class="info_btn">
-                                    <input type="button" class="info_button_btn" placeholder="전송하기">
+                                <div class="swiper-slide">
+                                    <div class="coin_info_text">
+                                        <div class="title_text">
+                                            <img src="./images/Ethereum_icon.png" alt="">
+                                            <h3>ETHEREUM</h3>
+                                        </div>
+                                        <p>ETH Coin</p>
+                                        <p>address: 0xs431sdf8ydc7fva7878</p>
+                                    </div>
+                                    <div class="coin_info_price">
+                                        <img src="./images/coin_copy_icon.png" alt="">
+                                        <img src="./images/coin_s_qr_icon.png" alt="">
+                                        <div class="price_num">
+                                            <h1>102,395</h1>
+                                        </div>
+                                    </div>
+                                    <div class="info_btn">
+                                        <input type="button" class="info_button_btn" value="전송하기">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="coin_info_text">
-                                    <h2>ETHEREUM</h2>
-                                    <span>ETH Coin</span>
-                                    <span>address:0x6df0adf7asdf8ydc7fva7878</span>
-                                </div>
-                                <div class="coin_info_price">
-                                    <img src="./images/coin_copy_icon.png" alt="">
-                                    <img src="./images/coin_s_qr_icon.png" alt="">
-                                    <strong>111,235</strong>
-                                </div>
-                                <div class="info_btn">
-                                    <input type="button" class="info_button_btn" placeholder="전송하기">
-                                </div>
-                            </div>
                             </div>
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-scrollbar"></div>
+                            <div class="swiper-button-prev" style="top:35px;left:-4px;">
+                              <img src="./images/arrow_left.png" alt="">
+                            </div>
+                            <div class="swiper-button-next" style="top:35px;right:-4px;">
+                                <img src="/images/arrow.png" alt="next page">
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section class="coin_history_area">
-                    <h4>use history</h4>
+                    <div class="history_box">
+                        <div class="history_name">
+                            <h4>use history</h4>
+                        </div>
+                        <div class="history_contents">
+                            <ul class="depth01" id="depth01">
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>   <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li><input type="button" value="상세보기"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
                 <section class="coin_lockup_area">
                     <h2>lockup</h2>
@@ -106,13 +177,15 @@
             prevEl: ".swiper-button-prev",
             },
             pagination: {
+                el: '.swiper-pagination',
                 type: 'bullets',
             },
             slidesPerView:'auto',
-            autoplay: {
-                delay: 1500,
-            },
+            // autoplay: {
+            //     // delay: 5000,
+            // },
             loopedSlides:1,
+           
         });
         </script>
     </div>

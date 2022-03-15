@@ -21,7 +21,7 @@
 *{margin:0;padding:0;border:0;box-sizing:border-box;font:inherit;color:inherit;flex-shrink:0;line-height:none;text-decoration:none;}
 html{font-size:62.5%;}
 body{line-height:1.7;}
-.container{max-width:1200px;margin:0 auto;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
 h1,h2,h3,h4,h5,h6,p{line-height:1.2;letter-spacing:-0.075em;}
 h1{font-size:4.8rem;}
 h2{font-size:3.6rem;}
@@ -53,38 +53,59 @@ img{width:100%;display:block;object-fit:cover;}
 /* 메인 */
 .main{background-image:url(/images/background.png);background-size:cover;background-repeat:no-repeat;}
 .main_container{display:grid;grid-template-columns:6fr 6fr;grid-gap:3rem;}
+
 /* 헤더라인 */
 .head_line{grid-row:1/2;grid-column:1/3;margin-top:80px;font-weight:var(--font-semi-bold);color:var(--color-black);}
-/* 인포 영역 */
-.coin_info_area{background-color:var(--color-white);grid-row:2/3;grid-column:1/2;}
-.coin_info_box{padding:20px 30px;}
-.coin_info_text h2{font-weight:var(--font-semi-bold);color:var(--color-black);}
-.coin_info_text p{font-size:1.6rem;font-weight:var(--font-semi-bold);color:var(--color-black);}
-.coin_info_price{display:flex;align-items:end;}
-.coin_info_price .price_num{margin-left:auto;}
-.coin_info_price .price_num h1{font-weight:var(--font-semi-bold);color:var(--color-main);}
-.coin_info_price img{width:20px;}
-/* 사용내역 영역 */
-.coin_history_area{background-color:var(--color-white);grid-row:2/4;grid-column:2/3;}
 
+/* 인포 영역 */
+.coin_info_area{background-color:var(--color-white);grid-row:2/3;grid-column:1/2;max-width:565px;}
+.coin_info_text{margin-bottom:30px;}
+.coin_info_text .title_text h3{font-weight:var(--font-semi-bold);color:var(--color-black);}
+.coin_info_text p{font-size:1.6rem;font-weight:var(--font-semi-bold);color:var(--color-black);}
+.coin_info_text .title_text{display:flex;margin-bottom:5px;align-items:center;}
+.coin_info_text .title_text img{width:6%;margin-right:5px;}
+.coin_info_price{display:flex;align-items:end;margin-bottom:15px;}
+.coin_info_price .price_num{margin-left:auto;}
+.coin_info_price .price_num h1{font-weight:var(--font-semi-bold);color:var(--color-main);line-height:1;}
+.coin_info_price img{width:20px;}
+.info_btn input{background-color:#2CA371;color:var(--color-white);padding:10px 0;}
+.info_button_btn{width: 100%;}
+
+/* swiper */
+.swiper-slide{padding:20px;}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {display:none;}
+.swiper-button-prev{top:30px;}
+.swiper-button-prev img, .swiper-button-next img{width:14px;}
+
+/* use_history section */
+.coin_history_area{background-color:var(--color-white);grid-row:2/4;grid-column:2/3;}
+.history_box{width:100%;padding:15px;}
+
+.depth02{display:flex;align-items:center;justify-content:space-between;background-color:var(--color-gray);padding:5px 10px;border-radius:15px;margin-bottom:5px;}
+.depth02 li img{width:25px;}
 /* 락업 및 로드맵 영역 */
 .coin_lockup_area{background-color:var(--color-white);grid-row:3/4;grid-column:1/2;}
 
-/* 미디어 커리 */
+/*---------------------------------------------------- 미디어 커리 */
+@media screen and  (max-width:1100px){
+    h2{font-size:3.2rem;}
+}
 @media screen and (max-width:768px){
     /* 반응형 */
-    .coin_info_area{grid-row:2/3;grid-column:1/3;}
+    .coin_info_area{grid-row:2/3;grid-column:1/3;max-width:none;}
     .coin_history_area{grid-row:3/4;grid-column:1/3;}
     .coin_lockup_area{grid-row:4/5;grid-column:1/3;}
 
     .container{padding:0 20px;}
     .header{height:50px;}
-    .logo img{width:50%;}
+    .logo img{width:65%;}
     /* nav */
     .nav{display:none;}
     .nav_btn{display:block;}
     /* head_line */
     .head_line{display:none;}
+    /* info_area */
+    
 }
 
 
