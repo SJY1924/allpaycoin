@@ -141,7 +141,7 @@ img{width:100%;display:block;object-fit:cover;}
 .view_more_close_btn{padding:5px;}
 
 /* uppage */
-#topButton img{width:30px;height:30px;position:fixed;left:90%;top:94%;}
+#topButton img{width:50px;height:50px;position:fixed;left:83%;top:90%;}
 /* keyframe */
 @keyframes fadeinright {
     0% {
