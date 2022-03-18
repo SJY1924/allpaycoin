@@ -17,6 +17,9 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <form action="login_ok.jsp" method="post">
+		<input type="submit" value="로그인"><br/>
+	</form> -->
     <div class="wrap">
          <!-- --------------header -->
         <header class="header">
@@ -463,7 +466,7 @@
                             <span>Transaction ID</span>
                         </div>
                         <div class="view_value">
-                            <span>9999we89asdf89as8das7d89as7da89sd79a8s7d8a8s9d89as897d89a89s7d8a</span>
+                            <span>9999we89asdf89as8das7d89as7da89s7d8a</span>
                         </div>
                         <div class="view_name">
                             <span>Block Height</span>
@@ -528,7 +531,9 @@
                 
               </div>  
         </footer>
-
+        <div id="topButton">
+            <img src="./images/up_icon_green1.png" id="topButtonImg">
+        </div>
 
 
 
@@ -580,8 +585,47 @@
            var modalCloseBtn = document.getElementById('ex2')
            modalCloseBtn.style.display = 'none';
            alert("전송완료");
-           
        }
+
+       let targetElement = document.getElementsByClassName('depth02')[2];
+       fadeIn(targetElement);
+
+    //    let targetElement = document.getElementsByClassName('depth02')[0];
+    //    fadeOut(targetElement);
+       function fadeIn(target) {
+           let level = 0;
+           let inTimer = null;
+           inTimer = setInterval( function(){
+               level = fadeInAction(target, level, inTimer);
+           },50);
+       }
+       function fadeInAction(target, level, inTimer) {
+           level = level + 0.05;
+           changeOpacity(target, level);
+           if(level>1) clearInterval(inTimer);
+           return level;
+       }
+       function changeOpacity(target, level){
+           let obj = target;
+           obj.style.opacity = level;
+       }
+
+       $(document).ready(function() {
+
+        $(window).scroll(function() {
+            // top button controll
+            if ($(this).scrollTop() > 500) {
+                $('#topButton').fadeIn();
+            } else {
+                $('#topButton').fadeOut();
+            }
+        });
+
+        $("#topButtonImg").click(function() {
+            $('html, body').animate({scrollTop:0}, '300');
+        });
+
+        });
         </script>
     </div>
 </body>
