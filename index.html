@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
 </head>
@@ -16,6 +20,19 @@
     <div class="wrap">
          <!-- --------------header -->
         <header class="header">
+            <div class="nav_area">
+                <ul class="nav_list" id="navList">
+                    <div class="close_btn">
+                        <img src="./images/nav_close_btn_icon.png" alt="" onclick="btnClose()">
+                    </div>
+                    <li><a href="http://www.allpaycoin.io/kr/">HOME</a></li>
+                    <li><a href="notice.html">DOWNLOAD</a></li>
+                    <li><a href="http://www.allpaycoin.io/kr/notice.php">NOTICE</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="use.html">이용약관</a></li>
+                    <li><a href="#">DISCONNECT</a></li>
+                </ul>
+            </div>
             <div class="container header_container">
                 <div class="header_box">
                     <div class="logo">
@@ -23,16 +40,17 @@
                     </div>
                     <div class="nav">
                         <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">DOWNLOAD</a></li>
-                            <li><a href="#">NOTICE</a></li>
+                            <li><a href="http://www.allpaycoin.io/kr/">HOME</a></li>
+                            <li><a href="notice.html">DOWNLOAD</a></li>
+                            <li><a href="http://www.allpaycoin.io/kr/notice.php">NOTICE</a></li>
                             <li><a href="#">CONTACT US</a></li>
-                            <li><a href="#">이용약관</a></li>
+                            <li><a href="use.html">이용약관</a></li>
                             <li><a href="#">DISCONNECT</a></li>
                         </ul>
                     </div>
-                    <div class="nav_btn">
-                        <div class="nav_bar_line"></div>
+                    <div class="nav_btn" >
+                        <div class="nav_bar_line" onclick="btnList()">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,18 +71,21 @@
                                             <img src="./images/Allpay_symbol01.png" alt="">
                                             <h3>ALLPAYCOIN</h3>
                                         </div>
-                                        <p>AllPay Coin</p>
                                         <p>address: 0x6df0adf7asdf8ydc7fva7878</p>
                                     </div>
                                     <div class="coin_info_price">
-                                        <img src="./images/coin_copy_icon.png" alt="">
-                                        <img src="./images/coin_s_qr_icon.png" alt="">
+                                        <img src="./images/coin_copy_icon.png" alt="" onclick="copy_click()">
+                                        <img src="./images/coin_s_qr_icon.png" alt="" onclick="address_click()">
                                         <div class="price_num">
-                                            <h1>319,235</h1>
+                                            <h1>319,235 <span>APCG</span></h1>
                                         </div>
                                     </div>
                                     <div class="info_btn">
-                                        <input type="button" class="info_button_btn" value="전송하기">
+                                        <p>
+                                            <a href="#ex1" rel="modal:open">
+                                                <input type="button" class="info_button_btn" value="전송하기">
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -73,22 +94,29 @@
                                             <img src="./images/Ethereum_icon.png" alt="">
                                             <h3>ETHEREUM</h3>
                                         </div>
-                                        <p>ETH Coin</p>
                                         <p>address: 0xs431sdf8ydc7fva7878</p>
                                     </div>
                                     <div class="coin_info_price">
-                                        <img src="./images/coin_copy_icon.png" alt="">
-                                        <img src="./images/coin_s_qr_icon.png" alt="">
+                                        <div class="address_copy">
+                                            <img src="./images/coin_copy_icon.png" alt="" onclick="copy_click()">
+                                        </div>
+                                        <div class="qr_copy">
+                                            <img src="./images/coin_s_qr_icon.png" alt="" onclick="address_click()">
+                                        </div>
                                         <div class="price_num">
-                                            <h1>102,395</h1>
+                                            <h1>102,395 <span>ETH</span></h1>
                                         </div>
                                     </div>
                                     <div class="info_btn">
-                                        <input type="button" class="info_button_btn" value="전송하기">
+                                        <p>
+                                            <a href="#ex1" rel="modal:open">
+                                                <input type="button" class="info_button_btn" value="전송하기">
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
+                            <div class="swiper-pagination" style="bottom:-4px;"></div>
                             <div class="swiper-button-prev" style="top:35px;left:-4px;">
                               <img src="./images/arrow_left.png" alt="">
                             </div>
@@ -101,66 +129,218 @@
                 <section class="coin_history_area">
                     <div class="history_box">
                         <div class="history_title">
-                            <h6>USE HISTORY</h6>
+                            <h6 id="more_btn">USE HISTORY</h6>
                         </div>
                         <div class="history_contents">
                             <ul class="depth01" id="depth01">
                                 <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/down_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>입금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/up_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>출금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/down_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>입금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/up_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>출금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
-                                </li>   <li>
+                                </li>
+                                <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/down_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>입금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="depth02" id="depth02">
                                         <li><img src="./images/up_icon_green.png" alt=""></li>
-                                        <li><span>WITHDRAW</span></li>
+                                        <li><span>출금</span></li>
                                         <li><span>2021.03.05 18:30</span></li>
                                         <li><span>8,000 APC</span></li>
-                                        <li><input type="button" value="상세보기"></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="depth02" id="depth02">
-                                        <li><img src="./images/plus_btn_icon.png" alt=""></li>
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>입금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>출금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>입금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>출금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>입금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>출금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/down_icon_green.png" alt=""></li>
+                                        <li><span>입금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                             <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="depth02" id="depth02">
+                                        <li><img src="./images/up_icon_green.png" alt=""></li>
+                                        <li><span>출금</span></li>
+                                        <li><span>2021.03.05 18:30</span></li>
+                                        <li><span>8,000 APC</span></li>
+                                        <li>
+                                            <p>
+                                                <a href="#ex2" rel="modal:open">
+                                                    <input type="button" class="info_button_btn" value="상세보기">
+                                                </a>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -183,51 +363,129 @@
                                     <span><strong>TOTAL LOCK 수량 : 324 APC</strong></span>
                                 </div>
                             </div>
-                        </div>https://sjy1924.github.io/allpaycoin/
-                       
-                    </div>
-                    <div class="loadmap_box">
-                        라인
-                        <p>1</p>
-                        <div class="asdad">
-                            asdasdadsa
+                            <div class="loadmap_box">
+                                <ul class="contents">
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>1차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>2차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>3차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>4차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>5차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <div class="loadmap_detail">
+                                            <span>6차 해지일</span>
+                                            <span>22.11.23</span>
+                                            <span>0.12APC 해지</span>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <p>1</p>
-                        <p>1</p>
-                        <div class="asdad">
-                            asdasdadsa
-                        </div>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
                     </div>
                 </section>
             </div>
         </main>
         <footer class="footer">
-            
+
+            <div id="ex1" class="modal">
+                <div class="modal_area">
+                    <div class="modal_left">
+                        <div class="modal_info">
+                            <img src="./images/Allpay_symbol01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal_right"></div>
+                </div>
+                <a href="#" rel="modal:close">닫기</a>
+              </div>
+
+              <div id="ex2" class="modal">
+                  <div class="modal_contents_area">
+                    <div class="modal_coin_left">
+                        <div class="modal_coin_name">
+                            <h4>ALLPAY COIN</h4>
+                        </div>
+                        <div class="modal_coin_img">
+                            <img src="./images/Allpay_symbol01.png" alt="">
+                        </div>
+                        <div class="modal_coin_price">
+                            <h4>1.23APCG</h4>
+                        </div>
+                    </div>
+                    <div class="modal_coin_right">
+                        <div class="modal_address_input">
+                            <div class="modal_address_input_name">
+                                <span>입금주소</span>
+                                <div class="name_copy_btn">
+                                    <span>붙여넣기</span>
+                                </div>
+                            </div>
+                            <div class="address_input_btn">
+                                <input type="text" name="" id="address_data" placeholder="입금주소를 입력 해주세요.">
+                            </div>
+                        </div>
+                        <div class="modal_number_input">
+                          <div class="modal_number_input_name">
+                              <span>수량입력</span>
+                              <div class="name_all_send_btn">
+                                  <span>모두 보내기</span>
+                              </div>
+                          </div>
+                          <input type="text" name="" id="number_data" placeholder="입금수량을 입력 해주세요.">
+                        </div>
+                    </div>
+                    <div class="modal_send_btn">
+                        <input type="button" value="전송하기" >
+                    </div>
+                  </div>
+                
+              </div>  
         </footer>
+
+
+
+
+
+
+
+
+
+
         <script>
             const swiper = new Swiper(".mySwiper", {
             navigation: {
@@ -239,11 +497,40 @@
                 type: 'bullets',
             },
             slidesPerView:'auto',
-            // autoplay: {
-            //     // delay: 5000,
-            // },
+            autoplay: {
+                delay: 1000,
+            },
             loopedSlides:1,
+        });
+        $("#fade").modal({
+  fadeDuration: 5000
+});
+
+        function setInnerHTML() {
+        let element = document.getElementById('my_div');
+        element.innerHTML += '<div>depth02</div>';
+        } 
+        
+       function copy_click(){
+           alert("복사완료");
+       }
+       function address_click(){
+           alert("복사완료");
+       }
+       function btnList() {
+            let btnClick = document.getElementById('navList');
+            btnClick.style['width'] = "100%";
+            
+            
+       }
+       function btnClose(){
+           let closeBtn = document.getElementById('navList');
+           closeBtn.style['width'] = "0%";
            
+       }
+       $("#custom-close").modal({
+        closeClass: 'icon-remove',
+       
         });
         </script>
     </div>
