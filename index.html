@@ -438,7 +438,7 @@
                 <a href="#" rel="modal:close">닫기</a>
               </div>
 
-              <div id="ex2" class="modal">
+              <div id="ex2" class="modal" id="modal">
                   <div class="modal_contents_area">
                     <div class="modal_coin_left">
                         <div class="modal_coin_name">
@@ -456,7 +456,7 @@
                             <div class="modal_address_input_name">
                                 <span>입금주소</span>
                                 <div class="name_copy_btn">
-                                    <span>붙여넣기</span>
+                                    <span class="click_btn">붙여넣기</span>
                                 </div>
                             </div>
                             <div class="address_input_btn">
@@ -467,14 +467,14 @@
                           <div class="modal_number_input_name">
                               <span>수량입력</span>
                               <div class="name_all_send_btn">
-                                  <span>모두 보내기</span>
+                                  <span class="click_btn">모두 보내기</span>
                               </div>
                           </div>
                           <input type="text" name="" id="number_data" placeholder="입금수량을 입력 해주세요.">
                         </div>
                     </div>
                     <div class="modal_send_btn">
-                        <input type="button" value="전송하기" >
+                        <input type="button" value="전송하기" onclick="modalClose()">
                     </div>
                   </div>
                 
@@ -507,8 +507,8 @@
             loopedSlides:1,
         });
         $("#fade").modal({
-  fadeDuration: 5000
-});
+        fadeDuration: 5000
+        });
 
         function setInnerHTML() {
         let element = document.getElementById('my_div');
@@ -532,10 +532,12 @@
            closeBtn.style['width'] = "0%";
            
        }
-       $("#custom-close").modal({
-        closeClass: 'icon-remove',
-       
-        });
+       function modalClose(){
+           var modalCloseBtn = document.getElementsByClassName('ex2')
+           modalCloseBtn.style.display = 'none';
+           alert("전송완료");
+           
+       }
         </script>
     </div>
 </body>
