@@ -73,7 +73,7 @@ img{width:100%;display:block;object-fit:cover;}
 .coin_info_price{display:flex;align-items:end;margin-bottom:15px;}
 .coin_info_price .price_num{margin-left:auto;}
 .coin_info_price .price_num h1{font-weight:var(--font-semi-bold);color:var(--color-main);line-height:0rem;}
-.coin_info_price img{width:30px;}
+.coin_info_price img{width:30px;color:blue;}
 .info_btn input{background-color:#2CA371;color:var(--color-white);padding:10px 0;}
 .info_button_btn{width: 100%;}
 
@@ -95,26 +95,27 @@ img{width:100%;display:block;object-fit:cover;}
 .depth02 li input{background-color:var(--color-main);border-radius:5px;color:var(--color-white);padding:2px 5px;}
 
 /* lockup and roadmap section */
-.coin_lockup_area{background-color:var(--color-white);grid-row:3/4;grid-column:1/2;position:relative;height:460px;background:url(../images/background.png);background-size:cover;background-repeat:repeat;}
+.coin_lockup_area{background-color:var(--color-white);grid-row:3/4;grid-column:1/2;position:relative;height:460px;background-color:var(--color-white);overflow:hidden;}
 .lockup_kard{padding:10px 20px 0;position:relative;}
-.lockup_box{background-color:#e6e6e6;border-radius:15px;padding:20px 0;}
+.lockup_box{border-radius:15px;padding:20px 0;background-image:url(../images/background_inner_shadow.png);background-repeat:no-repeat;background-size: cover;}
 .lockup_title{text-align:center;}
-.lockup_title h3{font-weight:var(--font-extra-bold);color:var(--color-black);}
+.lockup_title h3{font-weight:var(--font-extra-bold);color:var(--color-white);}
 .lockup_image{padding:0 20px;}
 .lockup_image img{width:80px;}
 .lockup_coin_info{display:flex;align-items:center;}
 .lockup_count{display:flex;flex-flow:column;}
-.lockup_count span{font-size:1.4rem;font-weight:var(--font-semi-bold);color: var(--color-black);}
+.lockup_count span{font-size:1.4rem;font-weight:var(--font-semi-bold);color: var(--color-white);}
 .loadmap_box{position:absolute;left:50%;top:100%;transform:translateX(-50%);}
 .loadmap_box::after{content:'';display:block;background-image:url(/images/line.png);width:20px;position:absolute;}
 .loadmap_box .contents{display:flex;flex-flow:column;gap:1rem;margin-top:20px;}
 .loadmap_box .contents li{flex:1;flex-basis:50%;}
+.contents li:hover{background-color:red;}
 .contents::after{content:'';display:block;background:url(../images/line.png);background-size: contain;background-repeat:repeat-y;width:4px;height:100%;position:absolute;left:50%;top:0%}
-.contents li:nth-child(2n-1){animation:fadeinleft 5s 1s infinite;background-color:#40b182;border-radius:5px;}
-.contents li:nth-child(2n){animation:fadeinright 5s 1s infinite;background-color:#5d756c;border-radius:5px;}
+.contents li:nth-child(2n-1){animation:fadeinleft 5s 1s infinite;border-radius:5px;background-image:url(../images/background.png);background-size:cover;background-repeat: no-repeat;border:2px solid #299769;}
+.contents li:nth-child(2n){animation:fadeinright 5s 1s infinite;border-radius:5px;background-image:url(../images/background.png);background-size:cover;background-repeat: no-repeat;border:2px solid #299769;}
 .loadmap_detail{width:130px;height:80px;text-align:center;margin:auto;display:flex;flex-flow:column;justify-content:center;}
-.loadmap_detail span:first-of-type{font-weight:var(--font-regular);color:#f5f5f5;}
-.loadmap_detail span{color:#dddddd;}
+.loadmap_detail span:first-of-type{font-weight:var(--font-semi-bold);color:var(--color-black)}
+.loadmap_detail span{color:var(--color-sub);}
 
 
 /* modal */
@@ -130,6 +131,13 @@ img{width:100%;display:block;object-fit:cover;}
 .click_btn{background-color:#40b182;border-radius:5px;color:#f5f5f5;padding:2px 6px;cursor: pointer;}
 .modal_send_btn{flex-basis:100%;width:90%;}
 .modal_send_btn input{background-color:#333333;color:var(--color-gray);padding:5px 20px;position:absolute;left:50%;top:50%;transform:translate(-50%,300%);border-radius:5px;}
+
+#ex1{height:420px;}
+.modal_more_view{display:flex;flex-flow:column;align-items:center;}
+.view_icon img{width:50px;}
+.view_info{display:flex;flex-flow:column;align-items: center;}
+.view_name{font-weight:var(--font-semi-bold);}
+.view_more_close_btn{padding:5px;}
 
 
 
@@ -222,6 +230,8 @@ img{width:100%;display:block;object-fit:cover;}
     .coin_info_price {margin-bottom:10px;}
     .coin_info_price .price_num h1 {color:var(--color-white);line-height:1rem;font-size:3.6rem;}
    
+    
+   
 
     .info_btn input{background-color:#0E331B;}
     .depth02 li span{font-size:1.1rem;}
@@ -233,6 +243,18 @@ img{width:100%;display:block;object-fit:cover;}
     .lockup_count span{font-size:1rem;}
     .lockup_image img{width:60px;}
     .loadmap_detail{width:100px;height:60px;}
+
+    /* modal */
+    .modal{height:400px;padding:0;}
+    .modal_contents_area{flex-flow:column;padding:30px 0;}
+    .modal_coin_left{margin-right:0;}
+    .modal_coin_img img{width:100px;}
+    .modal_address_input{margin-bottom:5px;}
+    .modal_address_input_name{margin-bottom:4px;}
+    .modal_number_input{margin-bottom:5px;}
+    .modal_number_input_name{margin-bottom:4px;}
+    .modal_send_btn input{transform:translate(-50%,550%);}
+    #ex1{height:auto;}
 }
 @media screen and (max-width:360px){
 
